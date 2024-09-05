@@ -1,0 +1,90 @@
+Projet : Système de Gestion de Bibliothèque (Library Management System)
+
+
+Description du Projet :
+Vous allez développer un système de gestion de bibliothèque en Python.
+Ce système permettra de gérer les livres, les utilisateurs, et les
+transactions de prêt/retour des livres. Il inclura une interface
+utilisateur en ligne de commande, un système de base de données
+pour stocker les informations, ainsi que des fonctionnalités avancées
+comme la recherche, le tri, et les rapports.
+
+Fonctionnalités Principales :
+
+
+1-Gestion des Livres :
+Ajouter, modifier, supprimer des livres.
+Rechercher des livres par titre, auteur, genre, ou code ISBN.
+Lister tous les livres disponibles, triés par titre, auteur, ou date de publication.
+
+2-Gestion des Utilisateurs :
+Enregistrer de nouveaux utilisateurs.
+Modifier et supprimer des profils d'utilisateurs.
+Lister tous les utilisateurs enregistrés.
+
+3-Gestion des Transactions :
+Enregistrer le prêt d'un livre à un utilisateur.
+Enregistrer le retour d'un livre.
+Suivre l'état des livres (empruntés ou disponibles).
+
+4-Recherche et Filtrage :
+Rechercher des livres en fonction de critères spécifiques (titre, auteur, genre).
+Filtrer les livres en fonction de leur disponibilité (empruntés, disponibles).
+
+5-Rapports :
+Générer un rapport des livres les plus empruntés.
+Générer un rapport des utilisateurs les plus actifs.
+
+6-Étapes de Développement :
+
+    Conception du Projet :
+    Créez un diagramme UML simple pour représenter les classes principales
+    (Livre, Utilisateur, Transaction).
+    Identifiez les relations entre les classes.
+    
+
+    Mise en place du projet :
+    Créez un environnement virtuel pour le projet.
+    Organisez votre projet avec des modules pour chaque fonctionnalité 
+    (gestion des livres, gestion des utilisateurs, gestion des transactions).
+
+    Développement des Classes et Fonctions :
+    Classe Livre : Attributs comme titre, auteur, genre, isbn, statut.
+    Classe Utilisateur : Attributs comme nom, identifiant, historique_emprunt.
+    Classe Transaction : Attributs comme livre, utilisateur, date_emprunt, date_retour.
+
+    Gestion des Données :
+    Stockez les données dans des fichiers JSON ou CSV.
+    Implémentez des fonctions pour charger, sauvegarder et mettre à jour les données.
+
+    Interface Utilisateur :
+    Développez une interface utilisateur en ligne de commande pour interagir avec le 
+    système (menu principal, options de gestion).
+    
+    Fonctionnalités Avancées :
+    Ajoutez des fonctionnalités de recherche et de tri.
+    Implémentez des fonctions pour générer des rapports.
+
+    Tests et Débogage :
+    Écrivez des tests unitaires pour valider les fonctionnalités principales.
+    Déboguez les erreurs et optimisez le code.
+    
+    Documentation :
+    Documentez chaque classe et fonction.
+    Rédigez un manuel utilisateur expliquant comment utiliser le système.
+    
+Concepts Python Couverts :
+Structures de données : Listes, dictionnaires, tuples, ensembles.
+Classes et objets : Héritage, polymorphisme, encapsulation.
+Gestion des fichiers : Lecture/écriture de fichiers JSON/CSV.
+Gestion des exceptions : Gestion des erreurs et des exceptions personnalisées.
+Programmation fonctionnelle : Utilisation de lambda, map, filter, reduce.
+Modules et packages : Organisation du code en modules.
+Tests unitaires : Utilisation de unittest pour valider les fonctionnalités.
+Documentation : Utilisation de docstrings et création de documentation technique.
+Livrables du Projet :
+Code source du système de gestion de bibliothèque.
+Diagramme UML des classes.
+Fichiers JSON/CSV de stockage des données.
+Manuel utilisateur.
+Rapport de tests unitaires.
