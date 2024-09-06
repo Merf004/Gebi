@@ -1,5 +1,6 @@
 import json
 
+# Class Books
 class Books:
     list_books = []
     b = 1
@@ -22,7 +23,7 @@ class Books:
         return {"id":self.id, "title": self.title, "author": self.author, "gender": self.gender, "isbn": self.isbn, "statut": self.statut}
 
 
-
+# Function to add a book
 def add_book():
     title = ''
     while len(title) < 3:
@@ -35,6 +36,7 @@ def add_book():
     print("Author name entered is valid: ", author)
     gender = ""
     list_gender = [
+        "Drama"
         "Fiction",
         "Science-fiction",
         "Fantasy",
@@ -45,7 +47,7 @@ def add_book():
         "Documentary",
         "Handbook",
         "Poetry",
-        "théâtre",
+        "Theater",
         "Children",
         "Young Adult",
         "BD",
@@ -67,3 +69,21 @@ def add_book():
     statut = "Available"
     
     b = Books(title, author, gender, isbn, statut)
+    
+
+# Function to delete a book
+def del_book():
+    id_book = int(input('Enter the id of the book to be deleted: '))
+    book_del = Books.list_books[id_book - 1]
+    book_title = book_del["title"]
+    answer = ''
+    while not (answer == 'Yes' or answer == 'No'):
+        answer = input(f"Do you really want to delete the book \"{book_title}\"?(Yes or No)\n")
+    if answer == "Yes":
+        del Books.list_books[id_book - 1]
+        print("Book removed")
+    elif answer == 'No':
+        print('The book has not been removed')
+    
+    with open("data/books.json", "w", encoding="utf-8") as f:
+            json.dump(Books.list_books, f, indent=4, ensure_ascii=False)
