@@ -11,5 +11,5 @@ with open('data/books.json', 'r', encoding='utf-8') as f:
     Books.list_books = json.load(f)
 Books.b = len(Books.list_books) + 1
 
-add_book()
-show_book_gender()
+
+show_book()       

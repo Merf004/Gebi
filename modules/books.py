@@ -254,3 +254,15 @@ def sort_pub_date():
     df = pd.DataFrame(t)
     print(df)  
     
+# Search function for books written by an author
+def show_book_author():
+    author = input("Enter the author name: ")
+    list_book_by_author = []
+    for book in Books.list_books:
+        if book["author"] == author:
+            list_book_by_author.append(book)
+    if list_book_by_author == []:
+        print(f"The author {author} has no book or does not exist")
+    else:
+        df = pd.DataFrame(list_book_by_author)
+        print(df) 
