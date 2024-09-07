@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "title": "Mapane",
+        "author": "Roland",
+        "gender": "BD",
+        "isbn": "2123546578895",
+        "statut": "Available",
+        "Release date": "2002-11-24"
+    }
+]

@@ -1,26 +1,29 @@
+import pandas as pd
 import json
+from datetime import date, datetime
 
 # Class Books
 class Books:
     list_books = []
     b = 1
-    def __init__(self, title, author, gender, isbn, statut) -> None:
+    def __init__(self, title, author, gender, isbn, statut, date_pub) -> None:
         self.id = Books.b
         self.title = title
         self.author = author
         self.gender = gender
         self.isbn = isbn
         self.statut = statut
+        self.date_pub = date_pub
         
         Books.b += 1
-        obj_dict = {"id":self.id, "title": self.title, "author": self.author, "gender": self.gender, "isbn": self.isbn, "statut": self.statut}
+        obj_dict = {"id":self.id, "title": self.title, "author": self.author, "gender": self.gender, "isbn": self.isbn, "statut": self.statut, "Release date": str(self.date_pub)}
         Books.list_books.append(obj_dict)
         
         with open("data/books.json", "w", encoding="utf-8") as f:
             json.dump(Books.list_books, f, indent=4, ensure_ascii=False) 
             
     def to_dict(self):
-        return {"id":self.id, "title": self.title, "author": self.author, "gender": self.gender, "isbn": self.isbn, "statut": self.statut}
+        return {"id":self.id, "title": self.title, "author": self.author, "gender": self.gender, "isbn": self.isbn, "statut": self.statut, "Release date": str(self.date_pub)}
 
 
 # Function to add a book
@@ -68,12 +71,25 @@ def add_book():
     
     statut = "Available"
     
-    b = Books(title, author, gender, isbn, statut)
+    print("Enter the publication date")
+    y = int(input("Year: "))
+    while (y < 1900) or (y > 2024):
+        y = int(input("Invalid year. Enter the year: "))
+    m = int(input("Month: "))
+    while (m < 1) or (m > 12):
+        m = int(input("Invalid month. Enter the month: "))    
+    d = int(input("Day: "))
+    while (d < 1) or (d > 31):
+        d = int(input("Invalid day. Enter the day: "))
+    
+    pub_date = str(date(y, m, d))
+    
+    b = Books(title, author, gender, isbn, statut, pub_date)
     
 
 # Function to delete a book
 def del_book():
-    id_book = int(input('Enter the id of the book to be deleted: '))
+    id_book = int(input('Enter the ID of the book to be deleted: '))
     book_del = Books.list_books[id_book - 1]
     book_title = book_del["title"]
     answer = ''
@@ -87,3 +103,37 @@ def del_book():
     
     with open("data/books.json", "w", encoding="utf-8") as f:
             json.dump(Books.list_books, f, indent=4, ensure_ascii=False)
+            
+
+# Function to show all books
+def show_book():
+    df = pd.DataFrame(Books.list_books)
+    print(df)
+
+
+
+
+# Function to modify book title
+def modify_book_title(book_id):
+    title = ''
+    while len(title) < 3:
+        title = input("Enter book title (minimum 3 characters): ")
+    Books.list_books[book_id - 1]["title"] = title
+    print(f"The title of the book ID {book_id} has been changed with success")
+    
+    with open("data/books.json", "w", encoding="utf-8") as f:
+            json.dump(Books.list_books, f, indent=4, ensure_ascii=False)
+
+
+# Function to modify book author name
+def modify_book_author_name(book_id):
+    author = ''
+    while len(author) < 3:
+        author = input("Enter book author name (minimum 3 characters): ")
+    Books.list_books[book_id - 1]["author"] = author
+    print(f"The author name of the book ID {book_id} has been changed with success")
+    
+    with open("data/books.json", "w", encoding="utf-8") as f:
+            json.dump(Books.list_books, f, indent=4, ensure_ascii=False)    
+
+    
