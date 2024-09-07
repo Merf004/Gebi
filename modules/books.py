@@ -18,13 +18,11 @@ class Books:
         Books.b += 1
         obj_dict = {"id":self.id, "title": self.title, "author": self.author, "gender": self.gender, "isbn": self.isbn, "statut": self.statut, "Release date": str(self.date_pub)}
         Books.list_books.append(obj_dict)
+        print(f"The ID {self.id} book has been add")
         
         with open("data/books.json", "w", encoding="utf-8") as f:
             json.dump(Books.list_books, f, indent=4, ensure_ascii=False) 
             
-    def to_dict(self):
-        return {"id":self.id, "title": self.title, "author": self.author, "gender": self.gender, "isbn": self.isbn, "statut": self.statut, "Release date": str(self.date_pub)}
-
 
 # Function to add a book
 def add_book():
