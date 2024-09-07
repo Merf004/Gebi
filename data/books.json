@@ -7,5 +7,32 @@
         "isbn": "0000000000000",
         "statut": "Available",
         "Release date": "2001-11-09"
+    },
+    {
+        "id": 2,
+        "title": "Donatien",
+        "author": "Fedim Melin",
+        "gender": "Utopie",
+        "isbn": "2154878965325",
+        "statut": "Available",
+        "Release date": "2004-01-07"
+    },
+    {
+        "id": 3,
+        "title": "Mirice SO",
+        "author": "Fedim Emma",
+        "gender": "Historical",
+        "isbn": "6554788965325",
+        "statut": "Available",
+        "Release date": "1955-07-08"
+    },
+    {
+        "id": 4,
+        "title": "Data",
+        "author": "Bolo",
+        "gender": "Utopie",
+        "isbn": "2154878965321",
+        "statut": "Available",
+        "Release date": "1999-12-07"
     }
 ]

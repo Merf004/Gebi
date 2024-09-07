@@ -54,7 +54,7 @@ def add_book():
         "Children",
         "Young Adult",
         "BD",
-        "historical",
+        "Historical",
         "Utopie",
         "Dystopie",
         "Humor"]
@@ -110,8 +110,42 @@ def del_book():
 def show_book():
     df = pd.DataFrame(Books.list_books)
     print(df)
-
-
+    
+# Function to show the books by gender
+def show_book_gender():
+    gender = ""
+    list_gender = [
+        "Drama"
+        "Fiction",
+        "Science-fiction",
+        "Fantasy",
+        "Police",
+        "Horror",
+        "Biography",
+        "Essai",
+        "Documentary",
+        "Handbook",
+        "Poetry",
+        "Theater",
+        "Children",
+        "Young Adult",
+        "BD",
+        "Historical",
+        "Utopie",
+        "Dystopie",
+        "Humor"]
+    print(list_gender)
+    while gender  not in list_gender:
+        gender = input("Enter the genre of the book: ")
+    list_book_by_gender = []
+    for book in Books.list_books:
+        if book["gender"] == gender:
+            list_book_by_gender.append(book)
+    if list_book_by_gender == []:
+        print(f"There is no book {gender}")
+    else:
+        df = pd.DataFrame(list_book_by_gender)
+        print(df)        
 
 
 # Function to modify book title
@@ -156,7 +190,7 @@ def modify_gender(book_id):
         "Children",
         "Young Adult",
         "BD",
-        "historical",
+        "Historical",
         "Utopie",
         "Dystopie",
         "Humor"]
@@ -200,4 +234,23 @@ def modify_pub_date(book_id):
     print(f"The publication date of the book ID {book_id} has been changed with success")
 
     with open("data/books.json", "w", encoding="utf-8") as f:
-            json.dump(Books.list_books, f, indent=4, ensure_ascii=False)  
+            json.dump(Books.list_books, f, indent=4, ensure_ascii=False) 
+            
+# Function for sorting books by title
+def sort_title():
+    t = sorted(Books.list_books, key=lambda x: x['title'])
+    df = pd.DataFrame(t)
+    print(df)    
+    
+# Function for sorting books by author name
+def sort_author_name():
+    t = sorted(Books.list_books, key=lambda x: x['author'])
+    df = pd.DataFrame(t)
+    print(df)  
+    
+# Function for sorting books by publication date
+def sort_pub_date():
+    t = sorted(Books.list_books, key=lambda x: x['Release date'])
+    df = pd.DataFrame(t)
+    print(df)  
+    
