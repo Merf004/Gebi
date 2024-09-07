@@ -135,5 +135,48 @@ def modify_book_author_name(book_id):
     
     with open("data/books.json", "w", encoding="utf-8") as f:
             json.dump(Books.list_books, f, indent=4, ensure_ascii=False)    
-
+            
+# Function to modify book gender
+def modify_gender(book_id):
+    gender = ""
+    list_gender = [
+        "Drama"
+        "Fiction",
+        "Science-fiction",
+        "Fantasy",
+        "Police",
+        "Horror",
+        "Biography",
+        "Essai",
+        "Documentary",
+        "Handbook",
+        "Poetry",
+        "Theater",
+        "Children",
+        "Young Adult",
+        "BD",
+        "historical",
+        "Utopie",
+        "Dystopie",
+        "Humor"]
+    print(list_gender)
+    while gender  not in list_gender:
+        gender = input("Enter the genre of the book: ")
     
+    Books.list_books[book_id - 1]["gender"] = gender
+    print(f"The gender of the book ID {book_id} has been changed with success")
+
+    with open("data/books.json", "w", encoding="utf-8") as f:
+            json.dump(Books.list_books, f, indent=4, ensure_ascii=False)    
+            
+# Function to modify ISBN
+def modify_isbn(book_id):
+    isbn = ''
+    while not (isbn.isnumeric() and len(isbn) == 13):
+        isbn = input("Enter the book's ISBN (International Standard Book Number). Make sure it contains exactly 13 digits :\n")
+    
+    Books.list_books[book_id - 1]["isbn"] = isbn    
+    print(f"The ISBN of the book ID {book_id} has been changed with success")
+
+    with open("data/books.json", "w", encoding="utf-8") as f:
+            json.dump(Books.list_books, f, indent=4, ensure_ascii=False)  
