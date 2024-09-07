@@ -10,4 +10,4 @@ import json
 with open('data/books.json', 'r', encoding='utf-8') as f:
     Books.list_books = json.load(f)
 
-modify_isbn(1)
+modify_pub_date(1)

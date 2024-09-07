@@ -83,7 +83,8 @@ def add_book():
         d = int(input("Invalid day. Enter the day: "))
     
     pub_date = str(date(y, m, d))
-    
+    print("The publication date entered is valid : ", pub_date)  
+        
     b = Books(title, author, gender, isbn, statut, pub_date)
     
 
@@ -177,6 +178,26 @@ def modify_isbn(book_id):
     
     Books.list_books[book_id - 1]["isbn"] = isbn    
     print(f"The ISBN of the book ID {book_id} has been changed with success")
+
+    with open("data/books.json", "w", encoding="utf-8") as f:
+            json.dump(Books.list_books, f, indent=4, ensure_ascii=False)  
+            
+# Function to modify the publication date
+def modify_pub_date(book_id):
+    print("Enter new the publication date")
+    y = int(input("Year: "))
+    while (y < 1900) or (y > 2024):
+        y = int(input("Invalid year. Enter the year: "))
+    m = int(input("Month: "))
+    while (m < 1) or (m > 12):
+        m = int(input("Invalid month. Enter the month: "))    
+    d = int(input("Day: "))
+    while (d < 1) or (d > 31):
+        d = int(input("Invalid day. Enter the day: "))
+    
+    pub_date = str(date(y, m, d))
+    Books.list_books[book_id - 1]["Release date"] = pub_date    
+    print(f"The publication date of the book ID {book_id} has been changed with success")
 
     with open("data/books.json", "w", encoding="utf-8") as f:
             json.dump(Books.list_books, f, indent=4, ensure_ascii=False)  
