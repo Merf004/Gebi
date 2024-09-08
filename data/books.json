@@ -27,21 +27,39 @@
         "Release date": "1955-07-08"
     },
     {
-        "id": 4,
-        "title": "Data",
-        "author": "Bolo",
-        "gender": "Utopie",
-        "isbn": "2154878965321",
+        "id": 6,
+        "title": "Maman",
+        "author": "Fedim Merlin",
+        "gender": "DramaFiction",
+        "isbn": "1245788965325",
         "statut": "Available",
-        "Release date": "1999-12-07"
+        "Release date": "2003-08-28"
     },
     {
-        "id": 5,
-        "title": "Mandjo",
-        "author": "Les rithmers ABC",
-        "gender": "Essai",
-        "isbn": "3265897854216",
+        "id": 7,
+        "title": "Ndorobucci",
+        "author": "Marvins",
+        "gender": "DramaFiction",
+        "isbn": "2132546578985",
         "statut": "Available",
-        "Release date": "2012-05-16"
+        "Release date": "2006-04-15"
+    },
+    {
+        "id": 8,
+        "title": "dsdsds",
+        "author": "sdsdsd",
+        "gender": "BD",
+        "isbn": "2154653212545",
+        "statut": "Available",
+        "Release date": "2004-12-12"
+    },
+    {
+        "id": 9,
+        "title": "rere",
+        "author": "dscdds",
+        "gender": "BD",
+        "isbn": "2132546578895",
+        "statut": "Available",
+        "Release date": "1999-01-01"
     }
 ]

@@ -89,13 +89,14 @@ def add_book():
 # Function to delete a book
 def del_book():
     id_book = int(input('Enter the ID of the book to be deleted: '))
-    book_del = Books.list_books[id_book - 1]
+    index_book_del = next((i for i, obj in enumerate(Books.list_books) if obj['id'] == id_book), None)
+    book_del = Books.list_books[index_book_del]
     book_title = book_del["title"]
     answer = ''
     while not (answer == 'Yes' or answer == 'No'):
         answer = input(f"Do you really want to delete the book \"{book_title}\"?(Yes or No)\n")
     if answer == "Yes":
-        del Books.list_books[id_book - 1]
+        del Books.list_books[index_book_del]
         print("Book removed")
     elif answer == 'No':
         print('The book has not been removed')
@@ -105,7 +106,7 @@ def del_book():
             
 
 # Function to show all books
-def show_book():
+def show_books():
     df = pd.DataFrame(Books.list_books)
     print(df)
     

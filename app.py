@@ -11,10 +11,15 @@ with open('data/books.json', 'r', encoding='utf-8') as f:
     Books.list_books = json.load(f)
 with open('data/users.json', 'r', encoding='utf-8') as f:
     Users.list_users = json.load(f)
-    
-Books.b = len(Books.list_books) + 1
-Users.u = len(Users.list_users) + 1
 
-add_user()
-add_book()
- 
+if Books.list_books == []:
+    Books.b = 1
+else:
+    Books.b = Books.list_books[-1]["id"] + 1
+    
+if Users.list_users == []:
+    Users.u = 1
+else:
+    Users.u = Users.list_users[-1]["id"] + 1
+
+show_users_gender()
