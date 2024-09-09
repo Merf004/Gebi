@@ -148,30 +148,74 @@ def show_book_gender():
 
 
 # Function to modify book title
-def modify_book_title(book_id):
+def modify_book_title():
+    
+    while True:
+        try:
+            book_id = int(input("Enter the book ID: "))
+            if book_id < 0:
+                raise ValueError("The ID must be positive.")
+            break
+        except ValueError:
+            print("No alphabetic characters or symbols")
     title = ''
     while len(title) < 3:
         title = input("Enter book title (minimum 3 characters): ")
-    Books.list_books[book_id - 1]["title"] = title
-    print(f"The title of the book ID {book_id} has been changed with success")
     
-    with open("data/books.json", "w", encoding="utf-8") as f:
-            json.dump(Books.list_books, f, indent=4, ensure_ascii=False)
+    decl = False
+    for book in Books.list_books:
+        if book["id"] == book_id:
+            book["title"] = title
+            decl = True
+            print(f"The title of the book ID {book_id} has been changed with success")
+            with open("data/books.json", "w", encoding="utf-8") as f:
+                json.dump(Books.list_books, f, indent=4, ensure_ascii=False)
+    if not decl:
+        print(f"The book ID {book_id} does not exist on the database")
+    
 
 
 # Function to modify book author name
-def modify_book_author_name(book_id):
-    author = ''
-    while len(author) < 3:
-        author = input("Enter book author name (minimum 3 characters): ")
-    Books.list_books[book_id - 1]["author"] = author
-    print(f"The author name of the book ID {book_id} has been changed with success")
+def modify_book_author_name():
     
-    with open("data/books.json", "w", encoding="utf-8") as f:
-            json.dump(Books.list_books, f, indent=4, ensure_ascii=False)    
-            
+    while True:
+        try:
+            book_id = int(input("Enter the book ID: "))
+            if book_id < 0:
+                raise ValueError("The ID must be positive.")
+            break
+        except ValueError:
+            print("No alphabetic characters or symbols")
+    author_name = ''
+    while len(author_name) < 3:
+        author_name = input("Enter book author name (minimum 3 characters): ")
+    
+    decl = False
+    for book in Books.list_books:
+        if book["id"] == book_id:
+            book["author"] = author_name
+            decl = True
+            print(f"The author name of the book ID {book_id} has been changed with success")
+            with open("data/books.json", "w", encoding="utf-8") as f:
+                json.dump(Books.list_books, f, indent=4, ensure_ascii=False)
+    if not decl:
+        print(f"The book ID {book_id} does not exist on the database")
+
+
+
+
+
 # Function to modify book gender
-def modify_gender(book_id):
+def modify_gender():
+    while True:
+        try:
+            book_id = int(input("Enter the book ID: "))
+            if book_id < 0:
+                raise ValueError("The ID must be positive.")
+            break
+        except ValueError:
+            print("No alphabetic characters or symbols")    
+    
     gender = ""
     list_gender = [
         "Drama"
@@ -197,26 +241,56 @@ def modify_gender(book_id):
     while gender  not in list_gender:
         gender = input("Enter the genre of the book: ")
     
-    Books.list_books[book_id - 1]["gender"] = gender
-    print(f"The gender of the book ID {book_id} has been changed with success")
-
-    with open("data/books.json", "w", encoding="utf-8") as f:
-            json.dump(Books.list_books, f, indent=4, ensure_ascii=False)    
+    decl = False
+    for book in Books.list_books:
+        if book["id"] == book_id:
+            book["gender"] = gender
+            decl = True
+            print(f"The gender of the book ID {book_id} has been changed with success")
+            with open("data/books.json", "w", encoding="utf-8") as f:
+                json.dump(Books.list_books, f, indent=4, ensure_ascii=False)
+    if not decl:
+        print(f"The book ID {book_id} does not exist on the database")
+   
             
 # Function to modify ISBN
-def modify_isbn(book_id):
+def modify_isbn():
+    while True:
+        try:
+            book_id = int(input("Enter the book ID: "))
+            if book_id < 0:
+                raise ValueError("The ID must be positive.")
+            break
+        except ValueError:
+            print("No alphabetic characters or symbols")     
+
     isbn = ''
     while not (isbn.isnumeric() and len(isbn) == 13):
         isbn = input("Enter the book's ISBN (International Standard Book Number). Make sure it contains exactly 13 digits :\n")
     
-    Books.list_books[book_id - 1]["isbn"] = isbn    
-    print(f"The ISBN of the book ID {book_id} has been changed with success")
-
-    with open("data/books.json", "w", encoding="utf-8") as f:
-            json.dump(Books.list_books, f, indent=4, ensure_ascii=False)  
+    decl = False
+    for book in Books.list_books:
+        if book["id"] == book_id:
+            book["isbn"] = isbn
+            decl = True
+            print(f"The ISBN number of the book ID {book_id} has been changed with success")
+            with open("data/books.json", "w", encoding="utf-8") as f:
+                json.dump(Books.list_books, f, indent=4, ensure_ascii=False)
+    if not decl:
+        print(f"The book ID {book_id} does not exist on the database")
+ 
             
 # Function to modify the publication date
-def modify_pub_date(book_id):
+def modify_pub_date():
+    while True:
+        try:
+            book_id = int(input("Enter the book ID: "))
+            if book_id < 0:
+                raise ValueError("The ID must be positive.")
+            break
+        except ValueError:
+            print("No alphabetic characters or symbols")     
+
     print("Enter new the publication date")
     y = int(input("Year: "))
     while (y < 1900) or (y > 2024):
@@ -229,11 +303,18 @@ def modify_pub_date(book_id):
         d = int(input("Invalid day. Enter the day: "))
     
     pub_date = str(date(y, m, d))
-    Books.list_books[book_id - 1]["Release date"] = pub_date    
-    print(f"The publication date of the book ID {book_id} has been changed with success")
+    
+    decl = False
+    for book in Books.list_books:
+        if book["id"] == book_id:
+            book["Release date"] = pub_date
+            decl = True
+            print(f"The publication date of the book ID {book_id} has been changed with success")
+            with open("data/books.json", "w", encoding="utf-8") as f:
+                json.dump(Books.list_books, f, indent=4, ensure_ascii=False)
+    if not decl:
+        print(f"The book ID {book_id} does not exist on the database")
 
-    with open("data/books.json", "w", encoding="utf-8") as f:
-            json.dump(Books.list_books, f, indent=4, ensure_ascii=False) 
             
 # Function for sorting books by title
 def sort_title():
@@ -293,3 +374,16 @@ def show_unavailable_book():
         df = pd.DataFrame(list_ab)
         print(df)
     
+# Function to search a book with his title
+
+def search_book():
+    book = ''
+    book_title = input ("Enter the Book title: ")
+    for b in Books.list_books:
+        if book_title == b["title"]:
+            book = b
+            break
+    if book == '':
+        print(f"The book {book_title} does not exist on the database")
+    else:
+        print(book)

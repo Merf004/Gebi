@@ -78,27 +78,58 @@ def show_users():
     print(df)
     
     
-# Function to modify book title
-def modify_user_fn(user_id):
+# Function to modify user first name
+def modify_user_fn():
+    while True:
+        try:
+            user_id = int(input("Enter the user ID: "))
+            if user_id < 0:
+                raise ValueError("The ID must be positive.")
+            break
+        except ValueError:
+            print("No alphabetic characters or symbols")    
+
     fname = ''
     while len(fname) < 3:
         fname = input("Enter user first name (minimum 3 characters): ")
-    Users.list_users[user_id - 1]["first name"] = fname
-    print(f"The first name of the user ID {user_id} has been changed with success")
+
+    decl = False
+    for user in Users.list_users:
+        if user["id"] == user_id:
+            user["first name"] = fname
+            decl = True
+            print(f"The first name of the user ID {user_id} has been changed with success")
+            with open("data/users.json", "w", encoding="utf-8") as f:
+                json.dump(Users.list_users, f, indent=4, ensure_ascii=False)
+    if not decl:
+        print(f"The user ID {user_id} does not exist on the database")
     
-    with open("data/users.json", "w", encoding="utf-8") as f:
-            json.dump(Users.list_users, f, indent=4, ensure_ascii=False)
             
-# Function to modify book title
-def modify_user_ln(user_id):
+# Function to modify user last name
+def modify_user_ln():
+    while True:
+        try:
+            user_id = int(input("Enter the user ID: "))
+            if user_id < 0:
+                raise ValueError("The ID must be positive.")
+            break
+        except ValueError:
+            print("No alphabetic characters or symbols") 
+    
     lname = ''
     while len(lname) < 3:
         lname = input("Enter user last name (minimum 3 characters): ")
-    Users.list_users[user_id - 1]["last name"] = lname
-    print(f"The last name of the user ID {user_id} has been changed with success")
-    
-    with open("data/users.json", "w", encoding="utf-8") as f:
-            json.dump(Users.list_users, f, indent=4, ensure_ascii=False)
+
+    decl = False
+    for user in Users.list_users:
+        if user["id"] == user_id:
+            user["last name"] = lname
+            decl = True
+            print(f"The last name of the user ID {user_id} has been changed with success")
+            with open("data/users.json", "w", encoding="utf-8") as f:
+                json.dump(Users.list_users, f, indent=4, ensure_ascii=False)
+    if not decl:
+        print(f"The user ID {user_id} does not exist on the database")
             
 
 # Function for sorting users by first name
@@ -130,4 +161,19 @@ def show_users_gender():
         if user["gender"] == gender:
             list_gender.append(user)
     df = pd.DataFrame(list_gender)
-    print(df)   
+    print(df) 
+    
+# Function to search a user with his first name and last name
+
+def search_user():
+    user = ''
+    user_fn = input ("Enter the user first name: ")
+    user_ln = input ("Enter the user last name: ")
+    for u in Users.list_users:
+        if user_fn == u["first name"] and user_ln == u["last name"]:
+            user = u
+            break
+    if user == '':
+        print(f"The user {user_fn} {user_ln} does not exist on the database")
+    else:
+        print(user)  
