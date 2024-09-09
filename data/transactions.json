@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "date": "2014-11-02",
+        "user": {
+            "id": 2,
+            "first name": "Tomba",
+            "last name": "Sidonie",
+            "gender": "F",
+            "age": 43
+        },
+        "book": {
+            "id": 6,
+            "title": "Maman",
+            "author": "Fedim Merlin",
+            "gender": "DramaFiction",
+            "isbn": "1245788965325",
+            "statut": "Unavailable",
+            "Release date": "2003-08-28"
+        },
+        "type": "Borrow"
+    },
+    {
+        "id": 2,
+        "date": "2014-08-04",
+        "user": {
+            "id": 2,
+            "first name": "Tomba",
+            "last name": "Sidonie",
+            "gender": "F",
+            "age": 43
+        },
+        "book": {
+            "id": 6,
+            "title": "Maman",
+            "author": "Fedim Merlin",
+            "gender": "DramaFiction",
+            "isbn": "1245788965325",
+            "statut": "Available",
+            "Release date": "2003-08-28"
+        },
+        "type": "Return"
+    },
+    {
+        "id": 3,
+        "date": "2023-11-05",
+        "user": {
+            "id": 2,
+            "first name": "Tomba",
+            "last name": "Sidonie",
+            "gender": "F",
+            "age": 43
+        },
+        "book": {
+            "id": 3,
+            "title": "Mirice SO",
+            "author": "Fedim Emma",
+            "gender": "Historical",
+            "isbn": "6554788965325",
+            "statut": "Unavailable",
+            "Release date": "1955-07-08"
+        },
+        "type": "Borrow"
+    }
+]

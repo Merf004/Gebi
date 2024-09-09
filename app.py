@@ -11,6 +11,8 @@ with open('data/books.json', 'r', encoding='utf-8') as f:
     Books.list_books = json.load(f)
 with open('data/users.json', 'r', encoding='utf-8') as f:
     Users.list_users = json.load(f)
+with open('data/transactions.json', 'r', encoding='utf-8') as f:
+    Transactions.list_transactions = json.load(f)
 
 if Books.list_books == []:
     Books.b = 1
@@ -21,5 +23,9 @@ if Users.list_users == []:
     Users.u = 1
 else:
     Users.u = Users.list_users[-1]["id"] + 1
+    
+if Transactions.list_transactions == []:
+    Transactions.t = 1
+else:
+    Transactions.t = Transactions.list_transactions[-1]["id"] + 1
 
-show_users_gender()

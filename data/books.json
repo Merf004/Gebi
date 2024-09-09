@@ -5,7 +5,7 @@
         "author": "Roland",
         "gender": "Young Adult",
         "isbn": "0000000000000",
-        "statut": "Available",
+        "statut": "Unavailable",
         "Release date": "2001-11-09"
     },
     {
@@ -14,7 +14,7 @@
         "author": "Fedim Melin",
         "gender": "Utopie",
         "isbn": "2154878965325",
-        "statut": "Available",
+        "statut": "Unavailable",
         "Release date": "2004-01-07"
     },
     {
@@ -23,7 +23,7 @@
         "author": "Fedim Emma",
         "gender": "Historical",
         "isbn": "6554788965325",
-        "statut": "Available",
+        "statut": "Unavailable",
         "Release date": "1955-07-08"
     },
     {

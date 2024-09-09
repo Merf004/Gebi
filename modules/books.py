@@ -265,3 +265,31 @@ def show_book_author():
     else:
         df = pd.DataFrame(list_book_by_author)
         print(df) 
+
+# Function to all available
+def show_available_book():
+    list_ab = []
+    
+    for b in Books.list_books:
+        if b["statut"] == "Available":
+            list_ab.append(b)
+    if list_ab == []:
+        print("No books available")
+    else:
+        df = pd.DataFrame(list_ab)
+        print(df)
+        
+
+# Function to all unavailable
+def show_unavailable_book():
+    list_ab = []
+    
+    for b in Books.list_books:
+        if b["statut"] == "Unavailable":
+            list_ab.append(b)
+    if list_ab == []:
+        print("No books unavailable")
+    else:
+        df = pd.DataFrame(list_ab)
+        print(df)
+    
