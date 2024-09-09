@@ -1,17 +1,10 @@
 [
     {
         "id": 1,
-        "first name": "Ateba",
-        "last name": "Donald",
+        "first name": "Mbong",
+        "last name": "Arnaud",
         "gender": "M",
         "age": 23
-    },
-    {
-        "id": 2,
-        "first name": "Matango",
-        "last name": "Sidonie",
-        "gender": "F",
-        "age": 43
     },
     {
         "id": 3,
@@ -33,5 +26,12 @@
         "last name": "Anne",
         "gender": "F",
         "age": 27
+    },
+    {
+        "id": 6,
+        "first name": "Mike",
+        "last name": "Magnan",
+        "gender": "M",
+        "age": 25
     }
 ]

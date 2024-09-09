@@ -3,6 +3,7 @@ from datetime import date, datetime
 from modules.books import *
 from modules.transactions import *
 from modules.users import *
+from modules.menu import *
 
 import pandas as pd
 import json
@@ -30,3 +31,5 @@ else:
     Transactions.t = Transactions.list_transactions[-1]["id"] + 1
 
 
+print("_______________________________________GeMi________________________________________")
+main_menu()

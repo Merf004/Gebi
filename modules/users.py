@@ -53,7 +53,7 @@ def add_user():
             
     u = Users(fname, lname, gender, age)
     
-# Function to delete a book 
+# Function to delete a user 
 def del_user():
     id_user = int(input('Enter the ID of the user to be deleted: '))
     index_user_del = next((i for i, obj in enumerate(Users.list_users) if obj['id'] == id_user), None)

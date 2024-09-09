@@ -22,7 +22,7 @@ class Transactions:
         obj_dict = {"id":self.id, "date": str(self.date), "user": obj_user, "book": obj_book, "type": self.type}
         Transactions.list_transactions.append(obj_dict)
         if self.type == "Borrow":
-            print(f"The ID {self.id} transaction has been add\nTransaction type: Borrow book)")
+            print(f"The ID {self.id} transaction has been add\nTransaction type: Borrow book")
         else:
             print(f"The ID {self.id} transaction has been add\nTansaction type: Return book")
         
@@ -150,15 +150,19 @@ def return_book():
                 print(f"Book ID {bookID} does not exist in database")
         else:
             print("Error: Please enter a valid number (no letters or symbols).")
-
+    
+    decl = False
     for b in Books.list_books:
         if b["id"] == bookID and b["statut"] == "Unavailable":
             book = b
             b["statut"] = "Available"
             type_trans = "Return"
+            decl = True
             t = Transactions(return_date, user, book, type_trans)
             with open("data/books.json", "w", encoding="utf-8") as f:
                 json.dump(Books.list_books, f, indent=4, ensure_ascii=False)
+    if not decl:
+        print("Unable to register this transaction: The book has already been returned")
 
 # Function to show all transactions
 def show_trans():

@@ -61,5 +61,110 @@
             "Release date": "1955-07-08"
         },
         "type": "Borrow"
+    },
+    {
+        "id": 4,
+        "date": "2024-11-01",
+        "user": {
+            "id": 3,
+            "first name": "Fotcheu",
+            "last name": "Isidore",
+            "gender": "M",
+            "age": 33
+        },
+        "book": {
+            "id": 6,
+            "title": "Pierretto",
+            "author": "Fedim Merlin",
+            "gender": "Humor",
+            "isbn": "1245788965325",
+            "statut": "Unavailable",
+            "Release date": "2003-08-28"
+        },
+        "type": "Borrow"
+    },
+    {
+        "id": 5,
+        "date": "2011-11-11",
+        "user": {
+            "id": 1,
+            "first name": "Mbong",
+            "last name": "Arnaud",
+            "gender": "M",
+            "age": 23
+        },
+        "book": {
+            "id": 7,
+            "title": "Pierre",
+            "author": "Magna",
+            "gender": "DramaFiction",
+            "isbn": "2132546578985",
+            "statut": "Unavailable",
+            "Release date": "2006-04-15"
+        },
+        "type": "Borrow"
+    },
+    {
+        "id": 6,
+        "date": "2011-11-11",
+        "user": {
+            "id": 1,
+            "first name": "Mbong",
+            "last name": "Arnaud",
+            "gender": "M",
+            "age": 23
+        },
+        "book": {
+            "id": 9,
+            "title": "rere",
+            "author": "dscdds",
+            "gender": "BD",
+            "isbn": "2132546578895",
+            "statut": "Unavailable",
+            "Release date": "1999-01-01"
+        },
+        "type": "Borrow"
+    },
+    {
+        "id": 7,
+        "date": "2011-11-11",
+        "user": {
+            "id": 1,
+            "first name": "Mbong",
+            "last name": "Arnaud",
+            "gender": "M",
+            "age": 23
+        },
+        "book": {
+            "id": 7,
+            "title": "Pierre",
+            "author": "Magna",
+            "gender": "DramaFiction",
+            "isbn": "2132546578985",
+            "statut": "Unavailable",
+            "Release date": "2006-04-15"
+        },
+        "type": "Borrow"
+    },
+    {
+        "id": 8,
+        "date": "2012-11-04",
+        "user": {
+            "id": 1,
+            "first name": "Mbong",
+            "last name": "Arnaud",
+            "gender": "M",
+            "age": 23
+        },
+        "book": {
+            "id": 7,
+            "title": "Pierre",
+            "author": "Magna",
+            "gender": "DramaFiction",
+            "isbn": "2132546578985",
+            "statut": "Available",
+            "Release date": "2006-04-15"
+        },
+        "type": "Return"
     }
 ]

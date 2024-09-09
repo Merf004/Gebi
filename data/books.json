@@ -1,11 +1,11 @@
 [
     {
         "id": 1,
-        "title": "Mapane",
+        "title": "Selena Gomez",
         "author": "Roland",
         "gender": "Young Adult",
         "isbn": "0000000000000",
-        "statut": "Unavailable",
+        "statut": "Available",
         "Release date": "2001-11-09"
     },
     {
@@ -13,17 +13,17 @@
         "title": "Donatien",
         "author": "Fedim Melin",
         "gender": "Utopie",
-        "isbn": "2154878965325",
-        "statut": "Unavailable",
-        "Release date": "2004-01-07"
+        "isbn": "2154214521456",
+        "statut": "Available",
+        "Release date": "2024-04-12"
     },
     {
         "id": 3,
         "title": "Mirice SO",
-        "author": "Fedim Emma",
-        "gender": "Historical",
+        "author": "Kira",
+        "gender": "BD",
         "isbn": "6554788965325",
-        "statut": "Unavailable",
+        "statut": "Available",
         "Release date": "2012-12-12"
     },
     {
@@ -45,21 +45,21 @@
         "Release date": "2006-04-15"
     },
     {
-        "id": 8,
-        "title": "loooop",
-        "author": "sdsdsd",
-        "gender": "BD",
-        "isbn": "7777777777777",
-        "statut": "Available",
-        "Release date": "2004-12-12"
-    },
-    {
         "id": 9,
         "title": "rere",
         "author": "dscdds",
         "gender": "BD",
         "isbn": "2132546578895",
-        "statut": "Available",
+        "statut": "Unavailable",
         "Release date": "1999-01-01"
+    },
+    {
+        "id": 10,
+        "title": "Matheo et alice",
+        "author": "Dimi Pea",
+        "gender": "DramaFiction",
+        "isbn": "2154562321545",
+        "statut": "Available",
+        "Release date": "2015-09-11"
     }
 ]
